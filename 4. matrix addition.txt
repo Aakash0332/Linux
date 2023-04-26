@@ -1,0 +1,40 @@
+#!/bin/bash
+
+# Initialize the matrices
+mat1=( [0,0]=1 [0,1]=2 [0,2]=3 [1,0]=4 [1,1]=5 [1,2]=6 [2,0]=7 [2,1]=8 [2,2]=9 )
+mat2=( [0,0]=9 [0,1]=8 [0,2]=7 [1,0]=6 [1,1]=5 [1,2]=4 [2,0]=3 [2,1]=2 [2,2]=1 )
+
+# Initialize the result matrix
+declare -A result
+
+# Iterate over the matrices and add the corresponding elements
+for (( i=0; i<3; i++ )); do
+  for (( j=0; j<3; j++ )); do
+    result[$i,$j]=$(( mat1[$i,$j] + mat2[$i,$j] ))
+  done
+done
+
+# Display the matrices and the result
+echo "Matrix 1:"
+for (( i=0; i<3; i++ )); do
+  for (( j=0; j<3; j++ )); do
+    echo -n "${mat1[$i,$j]} "
+  done
+  echo ""
+done
+
+echo "Matrix 2:"
+for (( i=0; i<3; i++ )); do
+  for (( j=0; j<3; j++ )); do
+    echo -n "${mat2[$i,$j]} "
+  done
+  echo ""
+done
+
+echo "Result:"
+for (( i=0; i<3; i++ )); do
+  for (( j=0; j<3; j++ )); do
+    echo -n "${result[$i,$j]} "
+  done
+  echo ""
+done

@@ -1,0 +1,7 @@
+#!/bin/bash
+echo "Enter the alphabets to be sorted: "
+read -a arr
+sorted=($(echo "${arr[@]}" | tr ' ' '\n' | sort -df))
+echo "Alphabets in ascending order: ${sorted[@]}"
+sorted=($(echo "${arr[@]}" | tr ' ' '\n' | sort -df | tac))
+echo "Alphabets in descending order: ${sorted[@]}"
