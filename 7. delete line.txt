@@ -1,0 +1,8 @@
+#!/bin/bash
+read -p "Enter the file name: " filename
+read -p "Enter the word to delete: " word
+
+sed -i "/$word/d" "$filename"
+
+echo "The updated file contents are:"
+cat "$filename"

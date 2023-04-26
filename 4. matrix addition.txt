@@ -1,0 +1,22 @@
+#!/bin/bash
+mat1=( 1 2 3 4 5 6 7 8 9 )
+mat2=( 9 8 7 6 5 4 3 2 1 )
+
+for (( i=0; i<9; i++ )); do
+  result[$((i/3)),$((i%3))]=$((mat1[$i] + mat2[$i]))
+done
+
+echo "Matrix 1:"
+echo "${mat1[0]} ${mat1[1]} ${mat1[2]}"
+echo "${mat1[3]} ${mat1[4]} ${mat1[5]}"
+echo "${mat1[6]} ${mat1[7]} ${mat1[8]}"
+
+echo "Matrix 2:"
+echo "${mat2[0]} ${mat2[1]} ${mat2[2]}"
+echo "${mat2[3]} ${mat2[4]} ${mat2[5]}"
+echo "${mat2[6]} ${mat2[7]} ${mat2[8]}"
+
+echo "Result:"
+echo "${result[0,0]} ${result[0,1]} ${result[0,2]}"
+echo "${result[1,0]} ${result[1,1]} ${result[1,2]}"
+echo "${result[2,0]} ${result[2,1]} ${result[2,2]}"

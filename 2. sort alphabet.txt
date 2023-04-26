@@ -1,0 +1,8 @@
+#!/bin/bash
+read -p "Enter the alphabets to be sorted: " -a arr
+
+echo "Alphabets in ascending order:"
+printf '%s\n' "${arr[@]}" | LC_ALL=C sort -f
+
+echo "Alphabets in descending order:"
+printf '%s\n' "${arr[@]}" | LC_ALL=C sort -f -r

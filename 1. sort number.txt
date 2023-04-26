@@ -1,0 +1,8 @@
+#!/bin/bash
+read -p "Enter the numbers to be sorted: " -a arr
+
+echo "Numbers in ascending order:"
+printf '%s\n' "${arr[@]}" | sort -n
+
+echo "Numbers in descending order:"
+printf '%s\n' "${arr[@]}" | sort -nr
